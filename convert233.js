@@ -39,12 +39,12 @@ function performConversion() {
   console.log(amtForConversion);
 
   fetch(
-    "http://apilayer.net/api/live?access_key=24ae58d22df615940872c7a389ec96e1"
+    "http://apilayer.net/api/live?access_key=8d2dc812fe8f6c5b9bef8066bb582ba9"
   )
-    .then(function (response) {
+    .then(function(response) {
       return response.json();
     })
-    .then(function (myJson) {
+    .then(function(myJson) {
       let apiLiveResultString = JSON.stringify(myJson);
       console.log("This is from apiLiveResult", apiLiveResultString);
       // let exchangeRates = apiLiveResult.quotes;
@@ -65,10 +65,18 @@ function performConversion() {
         "AUS=",
         audRate
       );
-      let gbpAmt = Number(Math.round((gbpRate * amtForConversion) + 'e2') + 'e-2');
-      let eurAmt = Number(Math.round((eurRate * amtForConversion) + 'e2') + 'e-2');
-      let cadAmt = Number(Math.round((cadRate * amtForConversion) + 'e2') + 'e-2');
-      let audAmt = Number(Math.round((audRate * amtForConversion) + 'e2') + 'e-2');
+      let gbpAmt = Number(
+        Math.round(gbpRate * amtForConversion + "e2") + "e-2"
+      );
+      let eurAmt = Number(
+        Math.round(eurRate * amtForConversion + "e2") + "e-2"
+      );
+      let cadAmt = Number(
+        Math.round(cadRate * amtForConversion + "e2") + "e-2"
+      );
+      let audAmt = Number(
+        Math.round(audRate * amtForConversion + "e2") + "e-2"
+      );
 
       // let gbpAmt = gbpRate * amtForConversion;
       // let eurAmt = eurRate * amtForConversion;
@@ -76,23 +84,23 @@ function performConversion() {
       // let audAmt = audRate * amtForConversion;
 
       let array = [
-        [
-          `<p><img src = "GBP.png" style="width:35px;height:20px;"> GBP (UK)</p>`,
-          gbpAmt
+          [
+            `<p><img src = "GBP.png" style="width:35px;height:20px;"> GBP (UK)</p>`,
+            gbpAmt
+          ],
+          [
+            `<p><img src = "EUR.jpg" style="width:35px;height:20px;"> Euros</p>`,
+            eurAmt
+          ],
+          [
+            `<p><img src = "CAD.png" style="width:35px;height:20px;"> CAD (Canada)</p>`,
+            cadAmt
+          ],
+          [
+            `<p> <img src = "AUS.png" style="width:35px;height:20px;"> AUS (Australia)</p>`,
+            audAmt
+          ]
         ],
-        [
-          `<p><img src = "EUR.jpg" style="width:35px;height:20px;"> Euros</p>`,
-          eurAmt
-        ],
-        [
-          `<p><img src = "CAD.png" style="width:35px;height:20px;"> CAD (Canada)</p>`,
-          cadAmt
-        ],
-        [
-          `<p> <img src = "AUS.png" style="width:35px;height:20px;"> AUS (Australia)</p>`,
-          audAmt
-        ]
-      ],
         table = document.getElementById("currency");
 
       /* Method 1 */
