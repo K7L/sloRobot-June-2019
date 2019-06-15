@@ -27,7 +27,7 @@ input_fn.addEventListener("blur", checkData);
 
 // set API endpoint and your access key
 endpoint = "live";
-access_key = "24ae58d22df615940872c7a389ec96e1";
+access_key = "8d2dc812fe8f6c5b9bef8066bb582ba9";
 
 // Function call API and fetch exchange rate
 
@@ -39,7 +39,7 @@ function performConversion() {
   console.log(amtForConversion);
 
   fetch(
-    "https://apilayer.net/api/live?access_key=8d2dc812fe8f6c5b9bef8066bb582ba9"
+    "http://apilayer.net/api/live?access_key=8d2dc812fe8f6c5b9bef8066bb582ba9"
   )
     .then(function(response) {
       return response.json();
