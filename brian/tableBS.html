@@ -75,17 +75,50 @@ _____       _ __          __   _ _
     <h1>Currency Converter</h1>
 
     <form>
-      <p>Amount (USD $)</p>
-      <input type="number" id="USD" class="inputArea">
-      <br>
-      <br>
-      <button type="button" id="submit-button">Convert</button>
-      <br>
-      <br>
+      <p>Amt. to convert</p>
+      <input type="text" id="inputAmt" class="inputArea" />
+      <br />
+      <br />
+      <button type="button" id="submit-button">Submit</button>
     </form>
+<!-- 
     <center>
-      <table id="currency" border="1">
-
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+       -->
+      <!-- <table class="table"> -->
+         
+      <!-- <table id="currency" border="1"> -->
+       
+      <table class="table" id="currency">
         <!-- Start Row -->
         <tr>
           <th>Currency</th>
@@ -116,7 +149,8 @@ _____       _ __          __   _ _
 
   </div>
   </body>
-  <script src="defaultCurrencyConversion.js"></script>
+  <script src="input_amt.js"></script>
+  <script src="convert.js"></script>
   <!-- <script src="table.js"></script> -->
   <!-- <script src="../simpleFetchExample/currencyLayerAPITest.js"></script>
   <script src="testdata.js"></script> -->
