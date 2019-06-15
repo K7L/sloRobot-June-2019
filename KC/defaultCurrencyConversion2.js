@@ -11,6 +11,23 @@ function checkData() {
     }
 }
 
+// function initializeTable() {
+//     // Prep table to display with 0 until a conversion amount is submitted
+//     let array = [["GBP", 0], ["EUR", 0], ["CAD", 0], ["AUD", 0]],
+//         table = document.getElementById("currency");
+
+//     /* Method 1 */
+//     // rows
+//     for (var i = 1; i < table.rows.length; i++) {
+//         // cells
+//         for (var j = 0; j < table.rows[i].cells.length; j++) {
+//             table.rows[i].cells[j].innerHTML = array[i - 1][j];
+//         }
+//     }
+// }
+
+// initializeTable();
+
 // function getInputData() {
 //     let data = [];
 //     data.push(input_fn.value);
@@ -57,7 +74,9 @@ function performConversion() {
             let cadRate = exchangeRates.USDCAD;
             let audRate = exchangeRates.USDAUD;
             console.log("GBP=", gbpRate, "EUR=", eurRate, "CAD=", cadRate, "AUS=", audRate);
-            let gbpAmt = gbpRate * amtForConversion;
+            let gbpAmt = Number(Math.round((gbpRate * amtForConversion) + 'e2') + 'e-2');
+            console.log("Two decimal places ", gbpAmt);
+            // let gbpAmt = gbpRate * amtForConversion;
             let eurAmt = eurRate * amtForConversion;
             let cadAmt = cadRate * amtForConversion;
             let audAmt = audRate * amtForConversion;
@@ -67,13 +86,19 @@ function performConversion() {
 
             /* Method 1 */
             // rows
+            // for (var i = 1; i < table.rows.length; i++) {
+            //     // cells
+            //     for (var j = 0; j < table.rows[i].cells.length; j++) {
+            //         table.rows[i].cells[j].innerHTML = array[i - 1][j];
+            //     }
+            // }
+
             for (var i = 1; i < table.rows.length; i++) {
                 // cells
                 for (var j = 0; j < table.rows[i].cells.length; j++) {
                     table.rows[i].cells[j].innerHTML = array[i - 1][j];
                 }
             }
-
 
         });
 }
