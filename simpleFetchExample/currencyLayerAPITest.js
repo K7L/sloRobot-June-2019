@@ -8,8 +8,8 @@
 // Example query: http://www.apilayer.net/api/live?access_key=24ae58d22df615940872c7a389ec96e1
 
 // set endpoint and your access key
-endpoint = 'live'
-access_key = '24ae58d22df615940872c7a389ec96e1';
+endpoint = "live";
+access_key = "24ae58d22df615940872c7a389ec96e1";
 
 // get the most recent exchange rates via the "live" endpoint:
 // $.ajax({
@@ -30,10 +30,12 @@ access_key = '24ae58d22df615940872c7a389ec96e1';
 //     }
 // });
 
-fetch('https://apilayer.net/api/live?access_key=24ae58d22df615940872c7a389ec96e1')
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (myJson) {
-        console.log(JSON.stringify(myJson));
-    });
+fetch(
+  "http://apilayer.net/api/live?access_key=24ae58d22df615940872c7a389ec96e1"
+)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(JSON.stringify(myJson));
+  });
