@@ -39,7 +39,7 @@ function performConversion() {
   console.log(amtForConversion);
 
   fetch(
-    "http://apilayer.net/api/live?access_key=8d2dc812fe8f6c5b9bef8066bb582ba9"
+    "https://apilayer.net/api/live?access_key=8d2dc812fe8f6c5b9bef8066bb582ba9"
   )
     .then(function(response) {
       return response.json();
