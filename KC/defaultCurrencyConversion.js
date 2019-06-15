@@ -30,7 +30,17 @@ fetch(
         let cadAmt = cadRate * amtForConversion;
         let audAmt = audRate * amtForConversion;
 
+        let array = [["GBP", gbpAmt], ["EUR", eurAmt], ["CAD", cadAmt], ["AUD", audAmt]],
+            table = document.getElementById("currency");
 
+        /* Method 1 */
+        // rows
+        for (var i = 1; i < table.rows.length; i++) {
+            // cells
+            for (var j = 0; j < table.rows[i].cells.length; j++) {
+                table.rows[i].cells[j].innerHTML = array[i - 1][j];
+            }
+        }
 
 
     });
